@@ -7,7 +7,7 @@
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
+RC_FILE = MyRes.rc
 TARGET = MyEditor
 TEMPLATE = app
 
