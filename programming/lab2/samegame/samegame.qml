@@ -5,6 +5,7 @@ Rectangle { // "холст" главного окна приложения в в
  width: 490; height: 720 // размеры прямоугольника
  SystemPalette { id: activePalette }
  Item { id: gameCanvas
+
      property int score: 0
      property int blockSize: 40
      width: parent.width - (parent.width % blockSize)

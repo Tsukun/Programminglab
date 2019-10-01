@@ -1,6 +1,6 @@
 /* This script file handles the game logic */
-var maxColumn = 10;
-var maxRow = 15;
+var maxColumn =10;
+var maxRow =15;
 var maxIndex = maxColumn * maxRow;
 var board = new Array(maxIndex);
 var component;
@@ -11,7 +11,7 @@ function index(column, row) {
 function startNewGame() {
  //Calculate board size
  maxColumn = Math.floor(gameCanvas.width / gameCanvas.blockSize);
- maxRow = Math.floor(gameCanvas.height / gameCanvas.blockSize);
+ maxRow = Math.floor(gameCanvas.height / gameCanvas.blockSize)-1;
  maxIndex = maxRow * maxColumn;
  //Close dialogs
  dialog.hide();
@@ -138,12 +138,12 @@ function victoryCheck() {
  //Award bonus points if no blocks left
  var deservesBonus = true;
  for (var column = maxColumn - 1; column >= 0; column--)
- if (board[index(column, maxRow - 1)] != null)
+ if (board[index(column, maxRow -1)] != null)
  deservesBonus = false;
  if (deservesBonus)
  gameCanvas.score += 500;
  //Check whether game has finished
- if (deservesBonus || !(floodMoveCheck(0, maxRow - 1, -1)))
+ if (deservesBonus || !(floodMoveCheck(0, maxRow-1, -1)))
  dialog.show("Game Over. Your score is " + gameCanvas.score);
 }
 //![2]
@@ -156,6 +156,5 @@ function floodMoveCheck(column, row, type) {
  var myType = board[index(column, row)].type;
  if (type == myType)
  return true;
- return floodMoveCheck(column + 1, row, myType) || floodMoveCheck(column, row
-- 1, board[index(column, row)].type);
+ return floodMoveCheck(column + 1, row, myType) || floodMoveCheck(column, row-1, board[index(column, row)].type);
 }
