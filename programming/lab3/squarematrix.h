@@ -10,9 +10,7 @@ public:
     SquareMatrix()
     {
     dimension=0;
-    value= new double*[dimension];
-    for (int i = 0; i < dimension; i++)
-       value[i] = new double[dimension];
+    createTwoDimMatrix(dimension);
     }
     SquareMatrix CreateMatrix();
     SquareMatrix plus(SquareMatrix,SquareMatrix);
@@ -22,6 +20,12 @@ public:
     SquareMatrix compareDeterm (SquareMatrix,SquareMatrix);
     SquareMatrix determinate (SquareMatrix);
     SquareMatrix matrixTrace (SquareMatrix);
+    int createTwoDimMatrix(int dimension)
+    {
+        value= new double*[dimension];
+        for (int i = 0; i < dimension; i++)
+           value[i] = new double[dimension];
+    }
 
 };
 #endif // SQUAREMATRIX_H
