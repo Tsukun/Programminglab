@@ -7,25 +7,18 @@ class SquareMatrix
     int dimension;
     double **value;
 public:
-    SquareMatrix()
-    {
-    dimension=0;
-    createTwoDimMatrix(dimension);
-    }
-    SquareMatrix CreateMatrix();
-    SquareMatrix plus(SquareMatrix,SquareMatrix);
-    SquareMatrix minus(SquareMatrix,SquareMatrix);
-    SquareMatrix multi (SquareMatrix,SquareMatrix);
-    SquareMatrix reverse (SquareMatrix);
-    SquareMatrix compareDeterm (SquareMatrix,SquareMatrix);
-    SquareMatrix determinate (SquareMatrix);
-    SquareMatrix matrixTrace (SquareMatrix);
-    int createTwoDimMatrix(int dimension)
-    {
-        value= new double*[dimension];
-        for (int i = 0; i < dimension; i++)
-           value[i] = new double[dimension];
-    }
+    SquareMatrix(int n);
+    ~SquareMatrix();
+    void CreateMatrix(SquareMatrix& sm);
+    void printMatrix(SquareMatrix& sm);
+     void plus(SquareMatrix,SquareMatrix);
+    void minus(SquareMatrix,SquareMatrix);
+     void multi (SquareMatrix,SquareMatrix);
+     void reverse (SquareMatrix);
+     void compareDeterm (SquareMatrix,SquareMatrix);
+     void determinate (SquareMatrix);
+     void matrixTrace (SquareMatrix);
+     void createTwoDimMatrix(SquareMatrix& sm);
 
 };
 #endif // SQUAREMATRIX_H
