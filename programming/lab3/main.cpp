@@ -9,7 +9,11 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
     setlocale(LC_ALL,"Russian");
     SquareMatrix test(3);
-    test.CreateMatrix(test);
-    test.printMatrix(test);
+    SquareMatrix test2(3);
+    SquareMatrix test3(3);
+    cin>>test;
+    cin>>test2;
+    //test3=test+test2;
+    cout<<test-test2;
     return a.exec();
 }
