@@ -6,14 +6,12 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+    int d;
     QCoreApplication a(argc, argv);
     setlocale(LC_ALL,"Russian");
     SquareMatrix test(3);
-    SquareMatrix test2(3);
-    SquareMatrix test3(3);
     cin>>test;
-    cin>>test2;
-    //test3=test+test2;
-    cout<<test-test2;
+ // cout<<test.determinant(test,test.dimension);
+    test.transp(test);
     return a.exec();
 }
