@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="matrix1">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>80</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="matrix2">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>80</y>
+      <width>251</width>
+      <height>191</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="plusbutton">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>80</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="minusbutton">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>100</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="multibutton">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>120</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>*</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="compbutton">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>140</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>==</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lessequalbutton">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>160</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;=</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="moreequalbutton">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>180</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&gt;=</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="morebutton">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>200</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&gt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="lessbutton">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>220</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nequalbutton">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>240</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>!=</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="dimensionset">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>280</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="setdimbutton">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>280</y>
+      <width>41</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>set</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="detbutton">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>280</y>
+      <width>81</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>determinant</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="tracebutton">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>280</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Trace of matrix</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="inversembutton">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>280</y>
+      <width>81</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>matrix^-1</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="setmatrix">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>310</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>set matrix</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="matrix3">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>330</y>
+      <width>256</width>
+      <height>192</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
