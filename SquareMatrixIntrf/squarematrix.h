@@ -1,13 +1,14 @@
 #ifndef SQUAREMATRIX_H
 #define SQUAREMATRIX_H
 #include <iostream>
-#include "ui_mainwindow.h"
+#include "Ui_mainwindow.h"
 #include <QMainWindow>
 #include <QTextBrowser>
 class SquareMatrix
 {
 
 public:
+
    //SquareMatrix(double**value=nullptr,int dimension=0);
    SquareMatrix();
    SquareMatrix(int n);
@@ -36,6 +37,7 @@ public:
 private:
      double **value;
      int dimension;
+
 
 
 };

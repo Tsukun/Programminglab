@@ -35,7 +35,7 @@ void MainWindow::on_setmatrix_clicked()
          }
     }
 
-on_plusbutton_clicked(m1,m2);
+on_minusbutton_clicked(m1,m2);
 }
 
 void MainWindow::on_plusbutton_clicked(SquareMatrix&m1,SquareMatrix&m2)
@@ -43,5 +43,84 @@ void MainWindow::on_plusbutton_clicked(SquareMatrix&m1,SquareMatrix&m2)
     SquareMatrix m3(m1.get_dim());
     m3=m1+m2;
     m3.show(ui->matrix3);
+
+}
+
+void MainWindow::on_minusbutton_clicked(SquareMatrix&m1,SquareMatrix&m2)
+{
+    SquareMatrix m3(m1.get_dim());
+    m3=m1-m2;
+    m3.show(ui->matrix3);
+}
+
+
+void MainWindow::on_multibutton_clicked(SquareMatrix&m1,SquareMatrix&m2)
+{
+    SquareMatrix m3(m1.get_dim());
+    m3=m1*m2;
+    m3.show(ui->matrix3);
+}
+
+void MainWindow::on_compbutton_clicked(SquareMatrix&m1,SquareMatrix&m2)
+{
+    if(m1==m2)
+        ui->matrix3->setText("true");
+    else {
+        ui->matrix3->setText("false");
+}
+}
+
+void MainWindow::on_lessequalbutton_clicked(SquareMatrix&m1,SquareMatrix&m2)
+{
+    if(m1<=m2)
+        ui->matrix3->setText("true");
+    else {
+        ui->matrix3->setText("false");
+}
+
+void MainWindow::on_moreequalbutton_clicked(SquareMatrix&m1,SquareMatrix&m2)
+{
+    if(m1<=m2)
+        ui->matrix3->setText("true");
+    else {
+        ui->matrix3->setText("false");
+}
+
+void MainWindow::on_morebutton_clicked(SquareMatrix&m1,SquareMatrix&m2)
+{
+    if(m1>m2)
+        ui->matrix3->setText("true");
+    else {
+        ui->matrix3->setText("false");
+}
+
+void MainWindow::on_lessbutton_clicked(SquareMatrix&m1,SquareMatrix&m2)
+{
+    if(m1<m2)
+        ui->matrix3->setText("true");
+    else {
+        ui->matrix3->setText("false");
+}
+
+void MainWindow::on_nequalbutton_clicked(SquareMatrix&m1,SquareMatrix&m2)
+{
+    if(m1!=m2)
+        ui->matrix3->setText("true");
+    else {
+        ui->matrix3->setText("false");
+}
+
+void MainWindow::on_detbutton_clicked(SquareMatrix&m1)
+{
+}
+}
+
+void MainWindow::on_tracebutton_clicked(SquareMatrix&m1)
+{
+
+}
+
+void MainWindow::on_inversembutton_clicked(SquareMatrix&m1)
+{
 
 }

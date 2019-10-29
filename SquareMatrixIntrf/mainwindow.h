@@ -23,8 +23,28 @@ private slots:
 
     void on_plusbutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
 
+    void on_minusbutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+
+    void on_multibutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+
+    void on_compbutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+
+    void on_lessequalbutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+
+    void on_moreequalbutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+
+    void on_morebutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+
+    void on_lessbutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+
+    void on_nequalbutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+
+    void on_detbutton_clicked(SquareMatrix&m1);
+
+    void on_tracebutton_clicked(SquareMatrix&m1);
+
+    void on_inversembutton_clicked(SquareMatrix&m1);
 private:
    Ui::MainWindow *ui;
-
 };
 #endif // MAINWINDOW_H
