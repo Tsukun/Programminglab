@@ -8,16 +8,18 @@ class SquareMatrix
 {
 
 public:
-    SquareMatrix();
-   SquareMatrix(int n);
+   //SquareMatrix(double**value=nullptr,int dimension=0);
+   SquareMatrix();
+   //SquareMatrix(int n);
    SquareMatrix(SquareMatrix& a);
    ~SquareMatrix();
      void show(QTextBrowser*& textBrowser);
-     void set_val (double val);
+     void set_val (double val,int i , int j);
+     void set_dim (int dim);
      int get_dim();
      double **get_val();
      friend SquareMatrix operator+(SquareMatrix&m1,SquareMatrix&m2);
-     SquareMatrix&  operator=(SquareMatrix&m1);
+     SquareMatrix&  operator=(const SquareMatrix&m1);
      friend SquareMatrix operator-(SquareMatrix&m1,SquareMatrix&m2);
      friend SquareMatrix operator*(SquareMatrix&m1,SquareMatrix&m2);
      friend bool operator==(SquareMatrix&m1,SquareMatrix&m2);

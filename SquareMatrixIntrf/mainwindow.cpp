@@ -26,19 +26,22 @@ void MainWindow::on_setdimbutton_clicked()
 
 void MainWindow::on_setmatrix_clicked()
 {
-    SquareMatrix m1(ui->dimensionset->value());
-    SquareMatrix m2(ui->dimensionset->value());
+    m1.set_dim(ui->dimensionset->value());
+    m2.set_dim(ui->dimensionset->value());
     for(int i=0;i<ui->dimensionset->value();i++){
-         for(int j=0;j<ui->dimensionset->value();j++){
-    m1.get_val()[i][j]=ui->matrix1->item(i,j)->text().toDouble();
-       m2.get_val()[i][j]=ui->matrix2->item(i,j)->text().toDouble();
+       for(int j=0;j<ui->dimensionset->value();j++){
+      m1.set_val(ui->matrix1->item(i,j)->text().toDouble(),i , j);
+      m2.set_val(ui->matrix2->item(i,j)->text().toDouble(),i,j);
+
          }
     }
-
 
 }
 
 void MainWindow::on_plusbutton_clicked(SquareMatrix&m1,SquareMatrix&m2)
 {
+    m3.set_dim(m1.get_dim());
+    m3=m1+m2;
+    m3.show(ui->matrix3);
 
 }

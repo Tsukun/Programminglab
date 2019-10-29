@@ -23,6 +23,18 @@
       <height>192</height>
      </rect>
     </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>40</number>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderDefaultSectionSize">
+     <number>23</number>
+    </attribute>
    </widget>
    <widget class="QTableWidget" name="matrix2">
     <property name="geometry">
@@ -33,6 +45,18 @@
       <height>191</height>
      </rect>
     </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>40</number>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderDefaultSectionSize">
+     <number>23</number>
+    </attribute>
    </widget>
    <widget class="QPushButton" name="plusbutton">
     <property name="geometry">
