@@ -25,9 +25,6 @@ private slots:
 
 private:
    Ui::MainWindow *ui;
-   SquareMatrix m1;
-   SquareMatrix m2;
-   SquareMatrix m3;
 
 };
 #endif // MAINWINDOW_H

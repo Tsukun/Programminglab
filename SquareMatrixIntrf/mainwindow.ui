@@ -275,4 +275,7 @@
  </widget>
  <resources/>
  <connections/>
+ <slots>
+  <slot>on_setmatrix_clicked()</slot>
+ </slots>
 </ui>

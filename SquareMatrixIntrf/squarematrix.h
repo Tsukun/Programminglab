@@ -10,11 +10,11 @@ class SquareMatrix
 public:
    //SquareMatrix(double**value=nullptr,int dimension=0);
    SquareMatrix();
-   //SquareMatrix(int n);
+   SquareMatrix(int n);
    SquareMatrix(SquareMatrix& a);
    ~SquareMatrix();
      void show(QTextBrowser*& textBrowser);
-     void set_val (double val,int i , int j);
+     void set_val (double val,int i,int j);
      void set_dim (int dim);
      int get_dim();
      double **get_val();

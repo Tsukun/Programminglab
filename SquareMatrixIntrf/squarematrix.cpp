@@ -7,19 +7,13 @@ SquareMatrix::SquareMatrix()
     this->dimension=0;
     this->value=nullptr;
 }
-/*SquareMatrix::SquareMatrix(double**value,int dimension)
-{
-    this->dimension=dimension;
-    this->value=value;
-}
-*/
-/*SquareMatrix::SquareMatrix(int n)
+SquareMatrix::SquareMatrix(int n)
 {
     this->dimension=n;
     this->value= new double*[n];
       for (int i = 0; i < n; i++)
            this->value[i] = new double[n];
-}*/
+}
 SquareMatrix::SquareMatrix(SquareMatrix& a)
 {
     dimension=a.dimension;
@@ -54,12 +48,7 @@ void SquareMatrix::set_val(double val,int i ,int j)
                  this->value[i][j]=val;
 
 }
-void SquareMatrix::set_dim(int dim)
-{
-    this->value=new double*[dim];
-    for(int i=0;i<dim;i++)
-        this->value[dim]=new double[dim];
-}
+
 int SquareMatrix::get_dim()
 {
     return  this->dimension;
@@ -71,8 +60,7 @@ double** SquareMatrix::get_val()
 
  SquareMatrix operator+(SquareMatrix&m1,SquareMatrix&m2)
 {
-     SquareMatrix m3;
-     m3.set_dim(m1.get_dim());
+     SquareMatrix m3(m1.dimension);
     for(int i=0 ;i<m1.dimension;i++)
          for(int j=0 ;j<m1.dimension;j++)
           m3.value[i][j]=m1.value[i][j]+m2.value[i][j];
@@ -81,8 +69,7 @@ double** SquareMatrix::get_val()
 }
 SquareMatrix operator-(SquareMatrix&m1,SquareMatrix&m2)
  {
-    SquareMatrix m3;
-    m3.set_dim(m1.get_dim());
+     SquareMatrix m3(m1.dimension);
     for(int i=0 ;i<m1.dimension;i++)
          for(int j=0 ;j<m1.dimension;j++)
           m3.value[i][j]=m1.value[i][j]-m2.value[i][j];
@@ -91,8 +78,7 @@ SquareMatrix operator-(SquareMatrix&m1,SquareMatrix&m2)
  }
 SquareMatrix operator*(SquareMatrix&m1,SquareMatrix&m2)
 {
-    SquareMatrix m3;
-    m3.set_dim(m1.get_dim());
+SquareMatrix m3(m1.dimension);
 for(int i=0 ;i<m1.dimension;i++)
 for(int j=0 ;j<m1.dimension;j++)
 for(int k=0; k < m1.dimension; k++)
@@ -135,8 +121,7 @@ return m3;
 double SquareMatrix::determinant(SquareMatrix&m1, int m) {
    int i, j, k, n;
    double d;
-   SquareMatrix m2;
-   m2.set_dim(m);
+   SquareMatrix m2(m);
    j = 0; d = 0;
    k = 1; //(-1) в степени i
    n = m-1;
@@ -179,10 +164,8 @@ double SquareMatrix::determinant(SquareMatrix&m1, int m) {
     }
     else
     {
-    SquareMatrix m2;
-    m2.set_dim(m1.get_dim());
-    SquareMatrix obrmatrix;
-    obrmatrix.set_dim(m1.get_dim());
+    SquareMatrix m2(m1.dimension);
+    SquareMatrix obrmatrix(m1.dimension);
     transp(m1);
         for (int i = 0; i<m2.dimension; i++) {
             for (int j = 0; j<m2.dimension; j++) {
