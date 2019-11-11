@@ -10,12 +10,12 @@ class SquareMatrix
 public:
 
    SquareMatrix(double**value=nullptr,int dimension=0);
-  // SquareMatrix();
-   //SquareMatrix(int n);
+   //SquareMatrix();
+  // SquareMatrix(int n);
    SquareMatrix(SquareMatrix& a);
    ~SquareMatrix();
      void show(QTextBrowser*& textBrowser);
-     void set_val (SquareMatrix&m1,double val,int i,int j);
+     void set_val (double val,int i,int j);
      void set_dim (int dim);
      int get_dim();
      double **get_val();
@@ -29,7 +29,7 @@ public:
      friend bool operator<=(SquareMatrix&m1,SquareMatrix&m2);
      friend bool operator>=(SquareMatrix&m1,SquareMatrix&m2);
      friend bool operator!=(SquareMatrix&m1,SquareMatrix&m2);
-     SquareMatrix reverseMatrix (SquareMatrix&m1,double det);
+     SquareMatrix inverseMatrix (SquareMatrix&m1,double det);
      double determinant(SquareMatrix&m1,int m);
      double matrixTrace (SquareMatrix &sm);
      void GetMatr(SquareMatrix&m1, SquareMatrix&m2, int i, int j);

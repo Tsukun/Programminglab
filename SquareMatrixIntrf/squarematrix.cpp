@@ -4,8 +4,9 @@
 using namespace std;
 /*SquareMatrix::SquareMatrix()
 {
-    this->dimension=0;
-    this->value=nullptr;
+    this->value= new double*[dimension];
+      for (int i = 0; i < dimension; i++)
+           this->value[i] = new double[dimension];
 }*/
 /*SquareMatrix::SquareMatrix(int n)
 {
@@ -21,13 +22,13 @@ SquareMatrix::SquareMatrix(double**val, int dim ) // конструктор с �
 }
 SquareMatrix::SquareMatrix(SquareMatrix& a)
 {
-    dimension=a.dimension;
+    dimension=a.get_dim();
     value=new double*[dimension];
     for(int i=0;i<a.dimension;i++)
         value[i]=new double[dimension];
-    value=a.value;
-    for(int i=0;i<a.dimension;i++)
-        value[i]=a.value[i];
+    value=a.get_val();
+    for(int i=0;i<a.get_dim();i++)
+        value[i]=a.get_val()[i];
 
 
 }
@@ -56,7 +57,11 @@ void SquareMatrix::set_val(double val,int i ,int j)
 
 void SquareMatrix::set_dim (int dim)
 {
+
     this->dimension=dim;
+    value=new double*[dimension];
+    for(int i=0;i<dimension;i++)
+        value[i]=new double[dimension];
 }
 int SquareMatrix::get_dim()
 {
@@ -91,19 +96,21 @@ SquareMatrix operator*(SquareMatrix&m1,SquareMatrix&m2)
 {
 SquareMatrix m3;
 m3.set_dim(m1.get_dim());
-for(int i=0 ;i<m1.dimension;i++)
-for(int j=0 ;j<m1.dimension;j++)
-for(int k=0; k < m1.dimension; k++)
-m3.value[i][j]+=m1.value[i][k]*m2.value[k][j];
+
+for(int i=0 ;i<m1.get_dim();i++)
+for(int j=0 ;j<m1.get_dim();j++)
+for(int k=0; k < m1.get_dim(); k++)
+m3.value[i][j]+=m1.get_val()[i][k]*m2.get_val()[k][j];
+
 return m3;
 }
  SquareMatrix& SquareMatrix::operator=(const SquareMatrix&m1 )
  {
      this->dimension=m1.dimension;
-     this->value= new double*[this->dimension];
+     this->value=new double*[this->dimension];
        for(int i=0 ;i<m1.dimension;i++)
        {
-            value[i] = new double[this->dimension];
+            this->value[i] = new double[this->dimension];
             for(int j=0 ;j<m1.dimension;j++)
                 this->value[i][j]=m1.value[i][j];
        }
@@ -111,7 +118,7 @@ return m3;
  }
  double SquareMatrix::matrixTrace(SquareMatrix&m1)
  {
-   double Trace;
+   double Trace=0;
    for (int i=0; i<m1.dimension; i++)
        Trace+=m1.value[i][i];
    return Trace;
@@ -168,7 +175,7 @@ double SquareMatrix::determinant(SquareMatrix&m1, int m) {
           }
          }
  }
- SquareMatrix SquareMatrix::reverseMatrix (SquareMatrix&m1,double det)
+ SquareMatrix SquareMatrix::inverseMatrix (SquareMatrix&m1,double det)
  {
     if(det==0)
     {
@@ -182,16 +189,16 @@ double SquareMatrix::determinant(SquareMatrix&m1, int m) {
     SquareMatrix obrmatrix;
     obrmatrix.set_dim(m1.get_dim());
     transp(m1);
-        for (int i = 0; i<m2.dimension; i++) {
-            for (int j = 0; j<m2.dimension; j++) {
+        for (int i = 0; i<m2.get_dim(); i++) {
+            for (int j = 0; j<m2.get_dim(); j++) {
         GetMatr(m1, m2, i, j);
-        obrmatrix.value[i][j] = (pow(-1.0,i+j+2)*determinant(m2, m2.dimension-1))/det;
+        obrmatrix.value[i][j] = (pow(-1.0,i+j+2)*determinant(m2, m2.get_dim()-1))/det;
 
       }
     }
-        for (int i = 0; i<m2.dimension; i++)
-      for (int j = 0; j<m2.dimension; j++)
-          m1.value[i][j]=obrmatrix.value[i][j];
+        for (int i = 0; i<m2.get_dim(); i++)
+      for (int j = 0; j<m2.get_dim(); j++)
+          m1.value[i][j]=obrmatrix.get_val()[i][j];
 return m1;
     }
 }

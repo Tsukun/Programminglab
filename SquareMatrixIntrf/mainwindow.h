@@ -21,33 +21,33 @@ private slots:
 
     void on_setmatrix_clicked();
 
-    void on_plusbutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+    void on_plusbutton_clicked();
 
     void on_minusbutton_clicked();
 
     void on_multibutton_clicked();
 
-    void on_compbutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+    void on_compbutton_clicked();
 
-    void on_lessequalbutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+    void on_lessequalbutton_clicked();
 
-    void on_moreequalbutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+    void on_moreequalbutton_clicked();
 
-    void on_morebutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+    void on_morebutton_clicked();
 
-    void on_lessbutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+    void on_lessbutton_clicked();
 
-    void on_nequalbutton_clicked(SquareMatrix&m1,SquareMatrix&m2);
+    void on_nequalbutton_clicked();
 
-    void on_detbutton_clicked(SquareMatrix&m1);
+    void on_detbutton_clicked();
 
-    void on_tracebutton_clicked(SquareMatrix&m1);
+    void on_tracebutton_clicked();
 
-    void on_inversembutton_clicked(SquareMatrix&m1);
+    void on_inversembutton_clicked();
 private:
-    //SquareMatrix m1;
-    //SquareMatrix m2;
-    //SquareMatrix m3;
+    SquareMatrix m1;
+    SquareMatrix m2;
+    SquareMatrix m3;
 
    Ui::MainWindow *ui;
 };
