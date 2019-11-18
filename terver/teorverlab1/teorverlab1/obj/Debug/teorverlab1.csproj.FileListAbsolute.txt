@@ -1,0 +1,10 @@
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\obj\Debug\teorverlab1.csprojAssemblyReference.cache
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\obj\Debug\teorverlab1.Properties.Resources.resources
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\obj\Debug\teorverlab1.csproj.GenerateResource.cache
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\obj\Debug\teorverlab1.csproj.CoreCompileInputs.cache
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\bin\Debug\teorverlab1.exe.config
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\bin\Debug\teorverlab1.exe
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\bin\Debug\teorverlab1.pdb
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\obj\Debug\teorverlab1.exe
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\obj\Debug\teorverlab1.pdb
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\obj\Debug\teorverlab1.Form1.resources
