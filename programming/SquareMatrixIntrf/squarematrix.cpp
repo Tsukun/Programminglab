@@ -2,19 +2,7 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-/*SquareMatrix::SquareMatrix()
-{
-    this->value= new double*[dimension];
-      for (int i = 0; i < dimension; i++)
-           this->value[i] = new double[dimension];
-}*/
-/*SquareMatrix::SquareMatrix(int n)
-{
-    this->dimension=n;
-    this->value= new double*[n];
-      for (int i = 0; i < n; i++)
-           this->value[i] = new double[n];
-}*/
+
 SquareMatrix::SquareMatrix(double**val, int dim ) // конструктор с параметрами и по умолчанию
 {
     value = val;
@@ -33,7 +21,7 @@ SquareMatrix::SquareMatrix(SquareMatrix& a)
 
 }
 SquareMatrix::~SquareMatrix()
-{
+{   delete value;
     for (int i = 0; i < dimension; i++)
          delete []value[i];
 }
@@ -96,7 +84,6 @@ SquareMatrix operator*(SquareMatrix&m1,SquareMatrix&m2)
 {
 SquareMatrix m3;
 m3.set_dim(m1.get_dim());
-
 for(int i=0 ;i<m1.get_dim();i++)
 for(int j=0 ;j<m1.get_dim();j++)
 for(int k=0; k < m1.get_dim(); k++)
@@ -183,16 +170,19 @@ double SquareMatrix::determinant(SquareMatrix&m1, int m) {
     obrmatrix.set_dim(m1.get_dim());
     if(m1.get_dim()==2)
     {
-           transp(m1);
-           for (int i = 0; i<m2.get_dim(); i++) {
-               for (int j = 0; j<m2.get_dim(); j++) {
-                  m1.value[i][j]/=pow(-1.0,i+j)*determinant(m1, m1.get_dim());
+        double temp;
+        temp=m1.value[0][0];
+        m1.value[0][0]=m1.value[1][1];
+        m1.value[1][1]=temp;
+        temp=determinant(m1, m1.get_dim());
+           for (int i = 0;i<m1.get_dim(); i++) {
+               for (int j = 0;j<m1.get_dim(); j++) {
+                  m1.value[i][j]*=pow(-1.0,i+j)*(1/temp);
                }
            }
     }
     else
     {
-           transp(m1);
         for (int i = 0; i<m2.get_dim(); i++) {
             for (int j = 0; j<m2.get_dim(); j++) {
         GetMatr(m1, m2, i, j);
@@ -202,7 +192,7 @@ double SquareMatrix::determinant(SquareMatrix&m1, int m) {
     }
         for (int i = 0; i<m2.get_dim(); i++)
       for (int j = 0; j<m2.get_dim(); j++)
-          m1.value[i][j]=obrmatrix.get_val()[i][j];
+          m1.value[j][i]=obrmatrix.get_val()[i][j];
     }
 return m1;
   }

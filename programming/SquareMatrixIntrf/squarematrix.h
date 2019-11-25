@@ -10,8 +10,6 @@ class SquareMatrix
 public:
 
    SquareMatrix(double**value=nullptr,int dimension=0);
-   //SquareMatrix();
-  // SquareMatrix(int n);
    SquareMatrix(SquareMatrix& a);
    ~SquareMatrix();
      void show(QTextBrowser*& textBrowser);

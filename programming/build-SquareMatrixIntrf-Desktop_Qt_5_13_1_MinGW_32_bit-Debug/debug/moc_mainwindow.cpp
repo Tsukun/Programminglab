@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[16];
-    char stringdata0[339];
+    char stringdata0[328];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,23 +35,23 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 23), // "on_setdimbutton_clicked"
 QT_MOC_LITERAL(2, 35, 0), // ""
-QT_MOC_LITERAL(3, 36, 20), // "on_setmatrix_clicked"
-QT_MOC_LITERAL(4, 57, 21), // "on_plusbutton_clicked"
-QT_MOC_LITERAL(5, 79, 22), // "on_minusbutton_clicked"
-QT_MOC_LITERAL(6, 102, 22), // "on_multibutton_clicked"
-QT_MOC_LITERAL(7, 125, 21), // "on_compbutton_clicked"
-QT_MOC_LITERAL(8, 147, 26), // "on_lessequalbutton_clicked"
-QT_MOC_LITERAL(9, 174, 26), // "on_moreequalbutton_clicked"
-QT_MOC_LITERAL(10, 201, 21), // "on_morebutton_clicked"
-QT_MOC_LITERAL(11, 223, 21), // "on_lessbutton_clicked"
-QT_MOC_LITERAL(12, 245, 23), // "on_nequalbutton_clicked"
-QT_MOC_LITERAL(13, 269, 20), // "on_detbutton_clicked"
-QT_MOC_LITERAL(14, 290, 22), // "on_tracebutton_clicked"
-QT_MOC_LITERAL(15, 313, 25) // "on_inversembutton_clicked"
+QT_MOC_LITERAL(3, 36, 9), // "setmatrix"
+QT_MOC_LITERAL(4, 46, 21), // "on_plusbutton_clicked"
+QT_MOC_LITERAL(5, 68, 22), // "on_minusbutton_clicked"
+QT_MOC_LITERAL(6, 91, 22), // "on_multibutton_clicked"
+QT_MOC_LITERAL(7, 114, 21), // "on_compbutton_clicked"
+QT_MOC_LITERAL(8, 136, 26), // "on_lessequalbutton_clicked"
+QT_MOC_LITERAL(9, 163, 26), // "on_moreequalbutton_clicked"
+QT_MOC_LITERAL(10, 190, 21), // "on_morebutton_clicked"
+QT_MOC_LITERAL(11, 212, 21), // "on_lessbutton_clicked"
+QT_MOC_LITERAL(12, 234, 23), // "on_nequalbutton_clicked"
+QT_MOC_LITERAL(13, 258, 20), // "on_detbutton_clicked"
+QT_MOC_LITERAL(14, 279, 22), // "on_tracebutton_clicked"
+QT_MOC_LITERAL(15, 302, 25) // "on_inversembutton_clicked"
 
     },
     "MainWindow\0on_setdimbutton_clicked\0\0"
-    "on_setmatrix_clicked\0on_plusbutton_clicked\0"
+    "setmatrix\0on_plusbutton_clicked\0"
     "on_minusbutton_clicked\0on_multibutton_clicked\0"
     "on_compbutton_clicked\0on_lessequalbutton_clicked\0"
     "on_moreequalbutton_clicked\0"
@@ -116,7 +116,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_setdimbutton_clicked(); break;
-        case 1: _t->on_setmatrix_clicked(); break;
+        case 1: _t->setmatrix(); break;
         case 2: _t->on_plusbutton_clicked(); break;
         case 3: _t->on_minusbutton_clicked(); break;
         case 4: _t->on_multibutton_clicked(); break;

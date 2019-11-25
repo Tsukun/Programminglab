@@ -43,7 +43,6 @@ public:
     QPushButton *detbutton;
     QPushButton *tracebutton;
     QPushButton *inversembutton;
-    QPushButton *setmatrix;
     QTextBrowser *matrix3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -111,9 +110,6 @@ public:
         inversembutton = new QPushButton(centralwidget);
         inversembutton->setObjectName(QString::fromUtf8("inversembutton"));
         inversembutton->setGeometry(QRect(370, 280, 81, 23));
-        setmatrix = new QPushButton(centralwidget);
-        setmatrix->setObjectName(QString::fromUtf8("setmatrix"));
-        setmatrix->setGeometry(QRect(50, 310, 91, 23));
         matrix3 = new QTextBrowser(centralwidget);
         matrix3->setObjectName(QString::fromUtf8("matrix3"));
         matrix3->setGeometry(QRect(240, 330, 256, 192));
@@ -147,7 +143,6 @@ public:
         detbutton->setText(QCoreApplication::translate("MainWindow", "determinant", nullptr));
         tracebutton->setText(QCoreApplication::translate("MainWindow", "Trace of matrix", nullptr));
         inversembutton->setText(QCoreApplication::translate("MainWindow", "matrix^-1", nullptr));
-        setmatrix->setText(QCoreApplication::translate("MainWindow", "set matrix", nullptr));
     } // retranslateUi
 
 };

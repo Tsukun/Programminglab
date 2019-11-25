@@ -237,19 +237,6 @@
      <string>matrix^-1</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="setmatrix">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>310</y>
-      <width>91</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>set matrix</string>
-    </property>
-   </widget>
    <widget class="QTextBrowser" name="matrix3">
     <property name="geometry">
      <rect>

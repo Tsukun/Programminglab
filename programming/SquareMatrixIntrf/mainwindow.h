@@ -19,7 +19,7 @@ void on_tableWidget_cellChanged(int row, int column);
 private slots:
     void on_setdimbutton_clicked();
 
-    void on_setmatrix_clicked();
+    void setmatrix();
 
     void on_plusbutton_clicked();
 
