@@ -14,7 +14,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-void on_tableWidget_cellChanged(int row, int column);
+    virtual void resizeEvent(QResizeEvent*f);
+    void on_tableWidget_cellChanged(int row, int column);
 
 private slots:
     void on_setdimbutton_clicked();
