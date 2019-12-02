@@ -21,7 +21,7 @@ void MainWindow::on_setdimbutton_clicked()
     ui->matrix2->setColumnCount(ui->dimensionset->value());
 
 }
-void MainWindow::resizeEvent(QResizeEvent * f)
+void MainWindow::resizeEvent(QResizeEvent * )
 {
 double widht1=this->width();
 double height1=this->height();

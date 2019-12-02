@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 114991249299534812}
   - component: {fileID: 114374280887586280}
   - component: {fileID: 54820546703163854}
-  - component: {fileID: 114671502708164574}
   m_Layer: 0
   m_Name: Enemycube
   m_TagString: Untagged
@@ -129,19 +128,6 @@ MonoBehaviour:
     type: 2}
   speed: 3
   obstacleRange: 5
---- !u!114 &114671502708164574
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1014696381974320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a92813891ce4274c9dea9c20cced4ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  damage: 1
 --- !u!114 &114991249299534812
 MonoBehaviour:
   m_ObjectHideFlags: 1
