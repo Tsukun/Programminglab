@@ -18,9 +18,6 @@ void MainWindow::on_pushButton_clicked()
 {
     string s;
     s=ui->polishin->text().toStdString();
-    for(int i=0;i < s.size();i++)
-    {
-        //if(s[i]>=)
-    }
+    stack<char> st(s.size());
     ui->polishout->setText( QString::fromStdString(s));
 }

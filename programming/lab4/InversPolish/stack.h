@@ -1,25 +1,72 @@
 #ifndef STACK_H
 #define STACK_H
-#include <iostream>
-#include <cassert>
-template <typename T>
-class Stack
-{
-private:
-    T *stackPtr;                      // указатель на стек
-    const int size;                   // максимальное количество элементов в стеке
-    int top;                          // номер текущего элемента стека
-public:
-    Stack(int = 10);                  // по умолчанию размер стека равен 10 элементам
-    Stack(const Stack<T> &);          // конструктор копирования
-    ~Stack();                         // деструктор
 
-    inline void push(const T & );     // поместить элемент в вершину стека
-    inline T pop();                   // удалить элемент из вершины стека и вернуть его
-    inline void printStack();         // вывод стека на экран
-    inline const T &Peek(int ) const; // n-й элемент от вершины стека
-    inline int getStackSize() const;  // получить размер стека
-    inline T *getPtr() const;         // получить указатель на стек
-    inline int getTop() const;        // получить номер текущего элемента в стеке
+template <typename T>
+class stack
+{
+public:
+    stack(int size = 10);
+    stack(stack<T> &);
+    ~stack();
+    void push(T value);
+    T pop();
+    int getTop();
+    int getSize();
+    T getPtr();
+private:
+T *ptr;
+int size;
+int top;
 };
+
+template <typename T>
+stack<T>::stack(int size)
+{
+  this->ptr=new T[size];
+  this->top=0;
+}
+template <typename T>
+stack<T>::stack(stack<T> & otherst)
+{
+    size=otherst.getSize();
+    top=otherst.getTop();
+    ptr=new T[size];
+    for(int i=0;i<size;i++)
+       ptr[i]=otherst.getPtr()[i];
+}
+template <typename T>
+stack<T>::~stack()
+{
+    delete[] ptr;
+}
+template <typename T>
+void stack<T>::push(T value)
+{
+    ptr[top++]=value;
+}
+
+template <typename T>
+T stack<T>::pop()
+{
+  //T temp;
+  //temp=ptr[top];
+  //ptr[--top];
+  return ptr[top--];
+}
+template <typename T>
+int stack<T>::getTop()
+{
+ return top;
+};
+template <typename T>
+int stack<T>::getSize()
+{
+ return size;
+};
+template <typename T>
+T stack<T>::getPtr()
+{
+ return ptr;
+};
+
 #endif // STACK_H

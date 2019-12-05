@@ -225,6 +225,7 @@ Makefile: ../InversPolish/InversPolish.pro D:/qtcreator/5.13.1/mingw73_32/mkspec
 		D:/qtcreator/5.13.1/mingw73_32/mkspecs/features/qt_config.prf \
 		D:/qtcreator/5.13.1/mingw73_32/mkspecs/win32-g++/qmake.conf \
 		D:/qtcreator/5.13.1/mingw73_32/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		D:/qtcreator/5.13.1/mingw73_32/mkspecs/features/exclusive_builds.prf \
 		D:/qtcreator/5.13.1/mingw73_32/mkspecs/features/toolchain.prf \
 		D:/qtcreator/5.13.1/mingw73_32/mkspecs/features/default_pre.prf \
@@ -415,6 +416,7 @@ D:/qtcreator/5.13.1/mingw73_32/mkspecs/features/qt_functions.prf:
 D:/qtcreator/5.13.1/mingw73_32/mkspecs/features/qt_config.prf:
 D:/qtcreator/5.13.1/mingw73_32/mkspecs/win32-g++/qmake.conf:
 D:/qtcreator/5.13.1/mingw73_32/mkspecs/features/spec_post.prf:
+.qmake.stash:
 D:/qtcreator/5.13.1/mingw73_32/mkspecs/features/exclusive_builds.prf:
 D:/qtcreator/5.13.1/mingw73_32/mkspecs/features/toolchain.prf:
 D:/qtcreator/5.13.1/mingw73_32/mkspecs/features/default_pre.prf:

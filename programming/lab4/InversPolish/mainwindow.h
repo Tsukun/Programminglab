@@ -1,8 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "stack.h"
 #include <QMainWindow>
 #include <string>
+#include "stack.h"
 #include <iostream>
 using namespace std;
 

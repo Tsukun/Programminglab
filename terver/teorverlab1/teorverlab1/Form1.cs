@@ -16,56 +16,96 @@ namespace teorverlab1
         static double Generation()
         {
             Random rand = new Random();
-            Thread.Sleep(100);
-            return rand.Next();
+            Thread.Sleep(10);
+            return rand.NextDouble();
         }
-        static double GenerationNormal(double du, double mu)
+        static double GenerationNormal(double du, double mu, double x)
+        {
+            return (1 / (du * Math.Sqrt(2 * Math.PI))) * Math.Pow(Math.E, (-Math.Pow(x - du, 2)) / (2 * du * du));
+        }
+        static double Aprox(double du, double mu, double k, int interval)
         {
             Random rand = new Random();
-            Thread.Sleep(100);
-            return (1 / (du * Math.Sqrt(2 * Math.PI))) * Math.Pow(Math.E, (-Math.Pow(rand.NextDouble() - du, 2)) / (2 * du * du));
-        }
-        static double[] Aprox(double du, double mu, double k, int N, int interval)
-        {
+            double[] F = new double[interval];
+            double[] len = new double[interval];
             double[] P = new double[interval];
-            double[] f = new double[interval];
             double r1;
-            double r2;
+            double r2 = 0.0f;
             double step;
             double lboard;
-
             lboard = mu - k * du;
             step = ((mu + k * du) - (mu - k * du)) / interval;
+            len[0] = lboard + step / 2;
 
-            f[0] = lboard + step / 2;
-            for (int i = 1; i < interval; i++)
+            for (int i = 1; i < (interval); i++)
             {
-                f[i] = f[i - 1] + step;
+                len[i] = len[i - 1] + step;
+
             }
-            for (int i = 0; i < interval; i++)
+            for (int i = 0; i < (interval); i++)
             {
-                P[i] = f[i] / f.Sum();
+                F[i] = GenerationNormal(du, mu, len[i]);
+                F[interval - i - 1] = F[i];
             }
+            for (int i = 0; i < (interval); i++)
+            {
+                P[i] = F[i] / F.Sum();
+            }
+
+            len[0] = P[0];
+            for (int i = 1; i < interval - 1; i++)
+            {
+                len[i] = len[i - 1] + P[i];
+            }
+            len[interval - 1] = 1;
 
 
             r1 = Generation();
-            for (int i = 0; i < N; i++)
+            if (r1 < len[0])
+            {
+
+                r2 = lboard + rand.NextDouble() * step;
+                return r2;
+            }
+            for (int i = 1; i < interval; i++)
             {
 
 
-                if (r1 < P[i])
+                if ((r1 > len[i - 1]) && (r1 <= len[i]))
                 {
-                    r2 = Generation();
 
+                    r2 = lboard + step * (i) + rand.NextDouble() * step;
 
+                    return r2;
                 }
-                else
-                    r1 -= P[i];
+
             }
-            return P;
+            return r2;
         }
-            
-    
+
+        int[] Gist(double mu, double du, double k, int N, int interval, double[] mass)
+        {
+            int[] arr = new int[interval];
+            int sum;
+            double ni, x = 0;
+            double lboard = mu - k * du;
+            double step = ((mu + k * du) - (mu - k * du)) / interval;
+            for (int i = 0; i < interval; i++)
+            {
+                for (int b = 0; b < N; b++)
+                {
+                    if ((mass[b] > lboard + step * (i)) && (mass[b] < lboard + step * (i + 1)))
+                        arr[i]++;
+                }
+                chart1.Series[0].Points.AddXY(i, arr[i]);
+            }
+            sum = arr.Sum();
+            ni = sum / interval;
+            // for (int b = 0; b < N; b++)
+            //x += Math.Pow((arr[b] - ni), 2) / ni;
+            return arr;
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -82,15 +122,26 @@ namespace teorverlab1
             du = double.Parse(textBox2.Text);
             k = double.Parse(textBox3.Text);
             double[] mass = new double[N];
+            double[] norm = new double[N];
 
-            mass = Aprox(du, mu, k, N, interval);
-
-            for (int i = 0; i < interval; i++)
+            for (int i = 0; i < N; i++)
             {
-                //chart1.Series[0].Points.AddY(mass[i])
-                s += mass[i].ToString() + " "; ;
+                mass[i] = Aprox(du, mu, k, interval);
+                //norm[i] = GenerationNormal(du,mu);
+            };
+
+            for (int i = 0; i < N; i++)
+            {
+                s += mass[i].ToString() + " ";
             }
             textBox6.Text = s;
+            chart1.Series[0].Points.Clear();
+            Gist(mu, du, k, N, interval, mass);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
