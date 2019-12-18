@@ -33,6 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.Calculator, Version=1.0.6216.39191, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.Calculator.1.0.6216.39191\lib\net40\Rychusoft.NumericalLibraries.Calculator.dll</HintPath>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.Derivative, Version=1.0.6216.39191, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.Derivative.1.0.6216.39191\lib\net40\Rychusoft.NumericalLibraries.Derivative.dll</HintPath>
+    </Reference>
+    <Reference Include="Rychusoft.NumericalLibraries.NumericalLibrariesCommon, Version=1.0.6216.39191, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rychusoft.NumericalLibraries.Calculator.1.0.6216.39191\lib\net40\Rychusoft.NumericalLibraries.NumericalLibrariesCommon.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -67,6 +80,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

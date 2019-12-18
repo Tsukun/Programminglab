@@ -8,3 +8,10 @@ D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\bin\Debug\teorverlab1.
 D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\obj\Debug\teorverlab1.exe
 D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\obj\Debug\teorverlab1.pdb
 D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\obj\Debug\teorverlab1.Form1.resources
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\bin\Debug\Rychusoft.NumericalLibraries.Calculator.dll
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\bin\Debug\Rychusoft.NumericalLibraries.Derivative.dll
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\bin\Debug\Rychusoft.NumericalLibraries.NumericalLibrariesCommon.dll
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\bin\Debug\Rychusoft.NumericalLibraries.Calculator.xml
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\bin\Debug\Rychusoft.NumericalLibraries.Derivative.xml
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\bin\Debug\Rychusoft.NumericalLibraries.NumericalLibrariesCommon.xml
+D:\githubpr\Programminglab\terver\teorverlab1\teorverlab1\obj\Debug\teorverlab1.csproj.CopyComplete

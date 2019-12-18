@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-
+using Excel = Microsoft.Office.Interop.Excel;
 namespace teorverlab1
 {
     public partial class Form1 : Form
@@ -21,7 +21,7 @@ namespace teorverlab1
         }
         static double GenerationNormal(double du, double mu, double x)
         {
-            return (1 / (du * Math.Sqrt(2 * Math.PI))) * Math.Pow(Math.E, (-Math.Pow(x - du, 2)) / (2 * du * du));
+            return (1 / (du * Math.Sqrt(2 * Math.PI))) * Math.Pow(Math.E, (-Math.Pow(x - mu, 2)) / (2 * du * du));
         }
         static double Aprox(double du, double mu, double k, int interval)
         {
@@ -37,17 +37,17 @@ namespace teorverlab1
             step = ((mu + k * du) - (mu - k * du)) / interval;
             len[0] = lboard + step / 2;
 
-            for (int i = 1; i < (interval); i++)
+            for (int i = 1; i < interval; i++)
             {
                 len[i] = len[i - 1] + step;
 
             }
-            for (int i = 0; i < (interval); i++)
+            for (int i = 0; i < interval; i++)
             {
                 F[i] = GenerationNormal(du, mu, len[i]);
                 F[interval - i - 1] = F[i];
             }
-            for (int i = 0; i < (interval); i++)
+            for (int i = 0; i < interval; i++)
             {
                 P[i] = F[i] / F.Sum();
             }
@@ -83,12 +83,17 @@ namespace teorverlab1
             return r2;
         }
 
-        int[] Gist(double mu, double du, double k, int N, int interval, double[] mass)
+        void Gist(double mu, double du, double k, int N, int interval, double[] mass)
         {
-            int[] arr = new int[interval];
+            double[] arr = new double[interval];
             int sum;
+            double xi=0.0f;
             double ni, x = 0;
             double lboard = mu - k * du;
+            double[] interv = new double[interval+1];
+            double[] Ptheor = new double[interval];
+            double[] Pemp = new double[interval];
+            double delta = double.Parse(textBox7.Text);
             double step = ((mu + k * du) - (mu - k * du)) / interval;
             for (int i = 0; i < interval; i++)
             {
@@ -99,11 +104,22 @@ namespace teorverlab1
                 }
                 chart1.Series[0].Points.AddXY(i, arr[i]);
             }
-            sum = arr.Sum();
-            ni = sum / interval;
-            // for (int b = 0; b < N; b++)
-            //x += Math.Pow((arr[b] - ni), 2) / ni;
-            return arr;
+            for (int i = 0; i <= interval; i++)
+            {
+                interv[i] = lboard+step*i;
+            }
+
+            for (int i = 0; i < interval; i++)
+            {
+                for (double j = interv[i]; j < interv[i+1]-delta; j += delta)
+                {
+                    Ptheor[i] += delta * 0.5f*(GenerationNormal(du, mu, j) + GenerationNormal(du, mu, j + delta));
+                }
+                Pemp[i] = arr[i] / N;
+                xi += (Math.Pow(Ptheor[i] - Pemp[i], 2.0f)) / Ptheor[i];
+                
+            }
+            textBox8.Text = xi.ToString();
         }
 
         public Form1()
@@ -127,7 +143,6 @@ namespace teorverlab1
             for (int i = 0; i < N; i++)
             {
                 mass[i] = Aprox(du, mu, k, interval);
-                //norm[i] = GenerationNormal(du,mu);
             };
 
             for (int i = 0; i < N; i++)
@@ -139,9 +154,11 @@ namespace teorverlab1
             Gist(mu, du, k, N, interval, mass);
         }
 
+    
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }

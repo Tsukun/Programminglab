@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rychusoft.NumericalLibraries.Derivative</name>
+    </assembly>
+    <members>
+        <member name="M:Rychusoft.NumericalLibraries.Derivative.Derivative.ComputeFunctionAtPoint">
+            <summary>
+            Compute function value at given point
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rychusoft.NumericalLibraries.Derivative.Derivative.ComputeDerivative">
+            <summary>
+            Compute first order derivative
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rychusoft.NumericalLibraries.Derivative.Derivative.ComputeDerivativeBis">
+            <summary>
+            Compute second order derivative
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rychusoft.NumericalLibraries.Derivative.Derivative.ComputeFunctionAtPoint(System.Double)">
+            <summary>
+            Compute function value at given point
+            </summary>
+            <param name="x">Point in which you want to compute the value</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rychusoft.NumericalLibraries.Derivative.Derivative.ComputeDerivative(System.Double)">
+            <summary>
+            Compute first order derivative
+            </summary>
+            <param name="x">Point in which you want to compute the derivative</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rychusoft.NumericalLibraries.Derivative.Derivative.ComputeDerivativeBis(System.Double)">
+            <summary>
+            Compute second order derivative
+            </summary>
+            <param name="x">Point in which you want to compute the derivative</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
