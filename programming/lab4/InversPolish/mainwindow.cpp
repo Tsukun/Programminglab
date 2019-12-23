@@ -16,7 +16,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    QString s;
+    QString s="";
     QStringList list;
      int k;
     list=ui->polishin->text().split(" ");
@@ -32,10 +32,22 @@ void MainWindow::on_pushButton_clicked()
            break;
         }
         else
-        s+=list.at(i);
+        {
+           char op=list.at(i).toStdString()[0];
+            switch(op)
+            {
+            case '*':
+                int a,b,c;
+                a=st.pop();
+                b=st.pop();
+                c=a*b;
+                st.push(c);
+                break;
+            }
         }
     }
     for(int i=st.getTop();i!=0;i--)
        k=st.pop();
     //ui->polishout->setText( QString::fromStdString(s));
+}
 }
