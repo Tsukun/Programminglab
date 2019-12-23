@@ -18,32 +18,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     account.cpp \
     company.cpp \
-    compwindown.cpp \
-    finalwindow.cpp \
     individual.cpp \
-    indvwindow.cpp \
-    ipadress.cpp \
     main.cpp \
     mainwindow.cpp \
-    requestwindow.cpp
+    modelwindow.cpp
 
 HEADERS += \
     account.h \
     company.h \
-    compwindown.h \
-    finalwindow.h \
     individual.h \
-    indvwindow.h \
-    ipadress.h \
     mainwindow.h \
-    requestwindow.h
+    modelwindow.h
 
 FORMS += \
-    compwindown.ui \
-    finalwindow.ui \
-    indvwindow.ui \
     mainwindow.ui \
-    requestwindow.ui
+    modelwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

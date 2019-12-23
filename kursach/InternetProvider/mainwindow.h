@@ -1,9 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "ipadress.h"
-#include <QMainWindow>
-#include "requestwindow.h"
 
+#include <QMainWindow>
+#include "modelwindow.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -21,6 +20,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    requestwindow *window;
+    modelwindow *model;
 };
 #endif // MAINWINDOW_H

@@ -6,8 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    window=new requestwindow();
-   connect(window, &requestwindow::window, this, &MainWindow::show);
+    model=new modelwindow();
+    connect(model, &modelwindow::window, this, &MainWindow::show);
 }
 
 MainWindow::~MainWindow()
@@ -18,6 +18,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    window->show();
-    this->close();
+   model->show();
+   this->close();
 }
