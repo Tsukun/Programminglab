@@ -5,10 +5,10 @@ template <typename T>
 class stack
 {
 public:
-    stack(int size = 10);
+    stack(int size);
     stack(stack<T> &);
     ~stack();
-    void push(T value);
+    void push(const T&value);
     T pop();
     int getTop();
     int getSize();
@@ -24,6 +24,7 @@ stack<T>::stack(int size)
 {
   this->ptr=new T[size];
   this->top=0;
+  this->size=size;
 }
 template <typename T>
 stack<T>::stack(stack<T> & otherst)
@@ -40,7 +41,7 @@ stack<T>::~stack()
     delete[] ptr;
 }
 template <typename T>
-void stack<T>::push(T value)
+void stack<T>::push(const T&value)
 {
     ptr[top++]=value;
 }
@@ -48,10 +49,7 @@ void stack<T>::push(T value)
 template <typename T>
 T stack<T>::pop()
 {
-  //T temp;
-  //temp=ptr[top];
-  //ptr[--top];
-  return ptr[top--];
+  return ptr[--top];
 }
 template <typename T>
 int stack<T>::getTop()
