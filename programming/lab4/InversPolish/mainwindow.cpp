@@ -18,9 +18,8 @@ void MainWindow::on_pushButton_clicked()
 {
     QString s="";
     QStringList list;
-     int k;
     list=ui->polishin->text().split(" ");
-    stack<int> st(list.size());
+    stack<double> st(list.size());
     for(int i=0;i<list.size();i++)
     {
         for(int j=0;j<list.at(i).size();j++)
@@ -28,7 +27,6 @@ void MainWindow::on_pushButton_clicked()
         if(list.at(i)[j]>=48 && list.at(i)[j]<=57)
         {
            st.push(list.at(i).toInt());
-           //k=list.at(i).toInt();
            break;
         }
         else
@@ -37,17 +35,54 @@ void MainWindow::on_pushButton_clicked()
             switch(op)
             {
             case '*':
-                int a,b,c;
-                a=st.pop();
+                double a,b,c;
                 b=st.pop();
+                a=st.pop();
+                s+=QString::number(a)+"*"+QString::number(b);
                 c=a*b;
+                s+="="+QString::number(c)+'\n';
                 st.push(c);
                 break;
+            case '+':
+                b=st.pop();
+                a=st.pop();
+                s+=QString::number(a)+"+"+QString::number(b);
+                c=a+b;
+                s+="="+QString::number(c)+'\n';
+                st.push(c);
+                break;
+            case '-':
+                b=st.pop();
+                a=st.pop();
+                s+=QString::number(a)+"-"+QString::number(b);
+                c=a-b;
+                s+="="+QString::number(c)+'\n';
+                st.push(c);
+                break;
+            case '/':
+                b=st.pop();
+                a=st.pop();
+                s+=QString::number(a)+"/"+QString::number(b);
+                c=a/b;
+                s+="="+QString::number(c)+'\n';
+                st.push(c);
+                break;
+            case '^':
+                b=st.pop();
+                a=st.pop();
+                s+=QString::number(a)+"^"+QString::number(b);
+                c=pow(a,b);
+                s+="="+QString::number(c)+'\n';
+                st.push(c);
+                break;
+            default:
+                s="Incorrect input";
+                break;
+
             }
         }
     }
-    for(int i=st.getTop();i!=0;i--)
-       k=st.pop();
-    //ui->polishout->setText( QString::fromStdString(s));
+
 }
+ ui->polishout->setText(s);
 }

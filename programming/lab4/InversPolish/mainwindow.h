@@ -4,6 +4,7 @@
 #include <string>
 #include "stack.h"
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 QT_BEGIN_NAMESPACE
