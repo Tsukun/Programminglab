@@ -1,0 +1,5 @@
+Individual#1 ChanceEquip:0 ChanceServ:0 Distance:4242 Floor:34 
+Individual#2 ChanceEquip:1 ChanceServ:1 Distance:480 Floor:39 
+Company#3 ChanceEquip:0 ChanceServ:0 Distance:2736 Count:896 
+Company#4 ChanceEquip:1 ChanceServ:0 Distance:1395 Count:148 
+Individual#5 ChanceEquip:1 ChanceServ:0 Distance:7443 Floor:4 
