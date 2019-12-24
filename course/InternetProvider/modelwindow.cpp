@@ -20,7 +20,7 @@ void modelwindow::generate(int chance,int count,int ratio,int maxDistance,int ma
    int x;
    comp=new company();
    indiv=new individual();
-   QFile file("D:\\githubpr\\Programminglab\\kursach\\InternetProvider\\systemfile.txt");
+   QFile file("D:\\githubpr\\Programminglab\\course\\InternetProvider\\systemfile.txt");
    QTextStream out(&file);
    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
    {
@@ -63,7 +63,7 @@ void modelwindow::calcSuccesAccount()
   int totalprice=0;
   QStringList list;
   QString out="";
-  QFile file("D:\\githubpr\\Programminglab\\kursach\\InternetProvider\\systemfile.txt");
+  QFile file("D:\\githubpr\\Programminglab\\course\\InternetProvider\\systemfile.txt");
   if (!file.open(QIODevice::ReadOnly|QIODevice::Text))
   {
       qDebug() << "Error2";
