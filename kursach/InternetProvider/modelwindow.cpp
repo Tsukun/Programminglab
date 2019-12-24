@@ -6,6 +6,8 @@ modelwindow::modelwindow(QWidget *parent) :
     ui(new Ui::modelwindow)
 {
     ui->setupUi(this);
+    setWindowIcon(QIcon(":/resource/resource/icon.png"));
+    setWindowTitle("Internet Provider");
 }
 
 modelwindow::~modelwindow()
@@ -18,11 +20,11 @@ void modelwindow::generate(int chance,int count,int ratio,int maxDistance,int ma
    int x;
    comp=new company();
    indiv=new individual();
-   QFile file("C:\\Users\\tsuku\\Documents\\InternetProvider\\test.txt");
+   QFile file("D:\\githubpr\\Programminglab\\kursach\\InternetProvider\\systemfile.txt");
    QTextStream out(&file);
    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
    {
-       qDebug() << "Error";
+       qDebug() << "Error1";
    }
    srand(time(0));
    for(int i=0;i<count;i++)
@@ -48,19 +50,22 @@ void modelwindow::generate(int chance,int count,int ratio,int maxDistance,int ma
       }
     }
    file.close();
+    calcSuccesAccount();
 }
 void modelwindow::calcSuccesAccount()
 {
-  //QString str = QFileDialog::getOpenFileName(0, "Open Dialog", "", "*.txt");
+  comp=new company();
+  indiv=new individual();
   int countSuccesComp=0;
   int countSuccesIndiv=0;
-  int countEquipComp=0;
-  int countEquipIndiv=0;
+  int countNotEquipComp=0;
+  int countNotEquipIndiv=0;
+  int totalprice=0;
   QStringList list;
-  QFile file("C:\\Users\\tsuku\\Documents\\InternetProvider\\test.txt");
+  QFile file("D:\\githubpr\\Programminglab\\kursach\\InternetProvider\\systemfile.txt");
   if (!file.open(QIODevice::ReadOnly|QIODevice::Text))
   {
-      qDebug() << "Error";
+      qDebug() << "Error2";
   }
   while(!file.atEnd())
   {
@@ -68,19 +73,32 @@ void modelwindow::calcSuccesAccount()
   list=s.split(" ");
   QString nameAcc=list.at(0).left(7);
   QString chanceServ=list.at(2).right(1);
+  QString chanceNotEquip=list.at(1).right(1);
+
   if(nameAcc=="Company"&&chanceServ!="0")
   {
-      countEquipComp++;
+    QString countWorkers=list.at(4).right(list.at(4).length()-6);
+    totalprice+=comp->priceCalc(countWorkers.toInt());
+
+     if(chanceNotEquip=="0")
+      countNotEquipComp++;
+
       countSuccesComp++;
-    qDebug()<<"Company";
   }
   else if(chanceServ!="0")
   {
-       qDebug()<<"Individual";
+      QString countFloors=list.at(4).right(list.at(4).length()-6);
+      totalprice+=indiv->priceCalc(countFloors.toInt());
+
+      if(chanceNotEquip=="0")
+       countNotEquipIndiv++;
+
        countSuccesIndiv++;
-       countEquipIndiv++;
   }
   }
+  totalprice+=comp->priceCalc(countNotEquipComp,countSuccesComp,ui->coeffpricecomp->text().toInt());
+  totalprice+=indiv->priceCalc(countNotEquipIndiv,countSuccesIndiv,ui->coeffpriceindiv->text().toInt());
+  ui->finalprice->setText(QString::number(totalprice));
   file.close();
 }
 void modelwindow::on_pushButton_clicked()
@@ -93,5 +111,4 @@ void modelwindow::on_pushButton_clicked()
  maxFloor=ui->maxFloor->text().toInt();
  maxCount=ui->maxCount->text().toInt();
  generate(chance,count,ratio,maxDistance,maxFloor,maxCount);
- calcSuccesAccount();
 }

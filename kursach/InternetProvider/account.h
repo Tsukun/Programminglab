@@ -15,6 +15,8 @@ public:
     bool getEquip();
     bool getServ();
     int getDistance();
+    virtual double priceCalc(int criterion)=0;
+    virtual double priceCalc(int countNotEquiped, int countAccount,int startprice)=0;
 private:
  bool chanceEquip;
  bool limitServ;

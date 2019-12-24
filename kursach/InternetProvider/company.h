@@ -9,6 +9,8 @@ public:
  ~company();
  void randomCount(int maxCount);
  int getCount();
+ double priceCalc(int criterion) override;
+ double priceCalc(int countNotEquiped, int countAccount,int startprice) override;
 private:
  int count;
 };
