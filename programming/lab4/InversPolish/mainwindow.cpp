@@ -18,7 +18,6 @@ void MainWindow::on_pushButton_clicked()
 {
     QString s="";
     QStringList list;
-    vector<string> out;
     list=ui->polishin->text().split(" ");
     stack<double> st(list.size());
     for(int i=0;i<list.size();i++)
@@ -75,6 +74,9 @@ void MainWindow::on_pushButton_clicked()
                 c=pow(a,b);
                 s+="="+QString::number(c)+'\n';
                 st.push(c);
+                break;
+            default:
+                s="Incorrect input";
                 break;
 
             }
