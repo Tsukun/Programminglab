@@ -2,5 +2,6 @@
     <qresource prefix="/resource">
         <file>resource/background.gif</file>
         <file>resource/icon.png</file>
+        <file>resource/error.png</file>
     </qresource>
 </RCC>

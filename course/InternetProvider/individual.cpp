@@ -1,10 +1,10 @@
 #include "individual.h"
 
-void individual::randomFloor(int MaxFloor)
+void individual::random(int x)
 {
-   floor=1+rand()%MaxFloor;
+   floor=1+rand()%x;
 }
-int individual::getFloor()
+int individual::getrandom()
 {
     return floor;
 }

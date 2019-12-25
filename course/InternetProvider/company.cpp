@@ -1,13 +1,11 @@
 #include "company.h"
 
-company::company(){}
-company::~company(){}
-void company::randomCount(int maxCount)
+void company::random(int x)
 {
- count=rand()%maxCount;
+ count=1+rand()%x;
 }
 
-int company::getCount()
+int company::getrandom()
 {
    return count;
 }

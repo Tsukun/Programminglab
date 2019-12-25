@@ -45,7 +45,7 @@
      </font>
     </property>
     <property name="text">
-     <string>start</string>
+     <string>начать</string>
     </property>
    </widget>
    <widget class="QLabel" name="background">

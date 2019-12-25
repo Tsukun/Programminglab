@@ -35,22 +35,22 @@ void modelwindow::generate(int chance,int count,int ratio,int maxDistance,int ma
        comp->randEquip(chance);
        comp->randDistance(maxDistance);
        comp->setServ(maxDistance);
-       comp->randomCount(maxCount);
+       comp->random(maxCount);
        out<<"Company#"<<i+1<<" ChanceEquip:"<<comp->getEquip()<<" ChanceServ:"<<comp->getServ();
-       out<<" Distance:"<<comp->getDistance()<<" Count:"<<comp->getCount()<<" \n";
+       out<<" Distance:"<<comp->getDistance()<<" Count:"<<comp->getrandom()<<" \n";
       }
       else
       {
        indiv->randEquip(chance);
        indiv->randDistance(maxDistance);
        indiv->setServ(maxDistance);
-       indiv->randomFloor(maxFloor);
+       indiv->random(maxFloor);
        out<<"Individual#"<<i+1<<" ChanceEquip:"<<indiv->getEquip()<<" ChanceServ:"<<indiv->getServ();
-       out<<" Distance:"<<indiv->getDistance()<<" Floor:"<<indiv->getFloor()<<" \n";
+       out<<" Distance:"<<indiv->getDistance()<<" Floor:"<<indiv->getrandom()<<" \n";
       }
     }
    file.close();
-    calcSuccesAccount();
+   calcSuccesAccount();
 }
 void modelwindow::calcSuccesAccount()
 {
@@ -102,9 +102,9 @@ void modelwindow::calcSuccesAccount()
   totalprice+=indiv->priceCalc(countNotEquipIndiv,countSuccesIndiv,ui->coeffpriceindiv->text().toInt());
   ui->finalprice->setText(QString::number(totalprice));
   ui->plainTextEdit->setPlainText(out);
-  ui->succesaccount->setText("Количество успешных аккаунтов: "+QString::number(countSuccesComp+countSuccesIndiv));
-  ui->succescomp->setText("Количество успешных компаний: "+QString::number(countSuccesComp));
-  ui->succesindiv->setText("Количество успешных физ.лиц: "+QString::number(countSuccesIndiv));
+  ui->succesaccount->setText("Количество обслуженных аккаунтов: "+QString::number(countSuccesComp+countSuccesIndiv));
+  ui->succescomp->setText("Количество обслуженных компаний: "+QString::number(countSuccesComp));
+  ui->succesindiv->setText("Количество обслуженных физ.лиц: "+QString::number(countSuccesIndiv));
   ui->countNotEquipC->setText("Количество не оснащенных компаний: "+QString::number(countNotEquipComp));
   ui->countNotEquipI->setText("Количество не оснащенных физ.лиц: "+QString::number(countNotEquipIndiv));
   file.close();
@@ -112,11 +112,22 @@ void modelwindow::calcSuccesAccount()
 void modelwindow::on_pushButton_clicked()
 {
  int chance,count,ratio,maxDistance,maxFloor,maxCount;
+ QErrorMessage error;
  chance=ui->chanceEquip->text().toInt();
  count=ui->countAccount->text().toInt();
  ratio=ui->ratioAccount->text().toInt();
  maxDistance=ui->maxDistance->text().toInt();
  maxFloor=ui->maxFloor->text().toInt();
  maxCount=ui->maxCount->text().toInt();
+ if(chance>100||ratio>100)
+ {
+     error.setWindowTitle("ERROR");
+     error.setWindowIcon(QIcon(":/resource/resource/error.png"));
+     error.showMessage("Неверное значение");
+     error.exec();
+ }
+ else
  generate(chance,count,ratio,maxDistance,maxFloor,maxCount);
+
 }
+

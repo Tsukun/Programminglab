@@ -28,7 +28,7 @@
   <widget class="QLineEdit" name="countAccount">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>20</x>
      <y>40</y>
      <width>113</width>
      <height>21</height>
@@ -41,7 +41,7 @@
   <widget class="QLineEdit" name="chanceEquip">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>20</x>
      <y>70</y>
      <width>113</width>
      <height>21</height>
@@ -54,7 +54,7 @@
   <widget class="QLineEdit" name="ratioAccount">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>20</x>
      <y>100</y>
      <width>113</width>
      <height>21</height>
@@ -67,7 +67,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>150</x>
      <y>40</y>
      <width>61</width>
      <height>16</height>
@@ -80,7 +80,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>150</x>
      <y>70</y>
      <width>111</width>
      <height>16</height>
@@ -93,14 +93,14 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>150</x>
      <y>100</y>
-     <width>91</width>
+     <width>191</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>соотношение(%)</string>
+    <string>соотношение(% компания/физ.лицо)</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -118,13 +118,13 @@
     </font>
    </property>
    <property name="text">
-    <string>modeling</string>
+    <string>моделирование</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="maxDistance">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>20</x>
      <y>130</y>
      <width>113</width>
      <height>21</height>
@@ -137,7 +137,7 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>150</x>
      <y>130</y>
      <width>131</width>
      <height>16</height>
@@ -150,7 +150,7 @@
   <widget class="QLineEdit" name="maxCount">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>360</x>
      <y>40</y>
      <width>113</width>
      <height>21</height>
@@ -163,7 +163,7 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>470</x>
+     <x>490</x>
      <y>40</y>
      <width>171</width>
      <height>16</height>
@@ -176,7 +176,7 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>360</x>
      <y>10</y>
      <width>161</width>
      <height>21</height>
@@ -194,7 +194,7 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>20</x>
      <y>10</y>
      <width>141</width>
      <height>21</height>
@@ -212,7 +212,7 @@
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>470</x>
+     <x>490</x>
      <y>130</y>
      <width>111</width>
      <height>16</height>
@@ -225,7 +225,7 @@
   <widget class="QLineEdit" name="maxFloor">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>360</x>
      <y>130</y>
      <width>113</width>
      <height>21</height>
@@ -238,7 +238,7 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>360</x>
      <y>100</y>
      <width>161</width>
      <height>21</height>
@@ -256,7 +256,7 @@
   <widget class="QLineEdit" name="coeffpricecomp">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>360</x>
      <y>70</y>
      <width>113</width>
      <height>21</height>
@@ -269,7 +269,7 @@
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>470</x>
+     <x>490</x>
      <y>70</y>
      <width>171</width>
      <height>16</height>
@@ -282,7 +282,7 @@
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>470</x>
+     <x>490</x>
      <y>160</y>
      <width>171</width>
      <height>16</height>
@@ -295,7 +295,7 @@
   <widget class="QLineEdit" name="coeffpriceindiv">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>360</x>
      <y>160</y>
      <width>113</width>
      <height>21</height>
@@ -308,7 +308,7 @@
   <widget class="QLabel" name="finalprice">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>560</x>
      <y>380</y>
      <width>131</width>
      <height>31</height>
@@ -328,7 +328,7 @@
     <rect>
      <x>440</x>
      <y>380</y>
-     <width>101</width>
+     <width>111</width>
      <height>31</height>
     </rect>
    </property>
@@ -339,7 +339,7 @@
     </font>
    </property>
    <property name="text">
-    <string>итоговая цена</string>
+    <string>итоговая выручка</string>
    </property>
   </widget>
   <widget class="QPlainTextEdit" name="plainTextEdit">

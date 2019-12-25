@@ -9,7 +9,7 @@
 #include <QDebug>
 #include <iostream>
 #include <QFileDialog>
-
+#include<QErrorMessage>
 using namespace std;
 namespace Ui {
 class modelwindow;
@@ -29,8 +29,8 @@ private slots:
 
 private:
     Ui::modelwindow *ui;
-    company *comp;
-    individual *indiv;
+    account *comp;
+    account *indiv;
 };
 
 #endif // MODELWINDOW_H
