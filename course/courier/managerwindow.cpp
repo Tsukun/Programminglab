@@ -6,7 +6,12 @@ managerwindow::managerwindow(QWidget *parent) :
     ui(new Ui::managerwindow)
 {
     ui->setupUi(this);
-    updateinf();
+    QStringList head;
+    head<<"ФИО"<<"Адрес"<<"Категория"<<"Масса"<<"Пошлина";
+    ui->inftable->setColumnCount(5);
+    ui->inftable->horizontalHeader()->setVisible(1);
+    ui->inftable->setHorizontalHeaderLabels(head);
+    //updateinf();
 }
 
 managerwindow::~managerwindow()
@@ -15,16 +20,16 @@ managerwindow::~managerwindow()
 }
 
 
-void managerwindow::updateinf()
+void managerwindow::updateinf(QString path)
 {
-
      QStringList list;
-     QFile file("D:\\githubpr\\Programminglab\\course\\courier\\fileout.txt");
+     QFile file(path);
      QTextStream stream(&file);
      if(!file.open(QIODevice::ReadOnly|QIODevice::Text))
      {
      qDebug()<<"Error";
      }
+     ui->inftable->setRowCount(0);
      while(!stream.atEnd())
      {
          QString str=stream.readLine();
@@ -37,10 +42,12 @@ void managerwindow::updateinf()
              {
                  for(int j=i+1;list.at(j)!="Адрес:";j++)
                  {
-                   str+=list.at(j)+" ";
+
+                     str+=list.at(j)+" ";
                  }
                    ui->inftable->setItem(ui->inftable->rowCount()-1, 0, new QTableWidgetItem());
                    ui->inftable->item(ui->inftable->rowCount()-1,0)->setText(str);
+                   ui->inftable->resizeRowToContents(ui->inftable->rowCount()-1);
              }
              if(list.at(i)=="Адрес:")
              {
@@ -50,6 +57,10 @@ void managerwindow::updateinf()
                  }
                    ui->inftable->setItem(ui->inftable->rowCount()-1, 1, new QTableWidgetItem());
                    ui->inftable->item(ui->inftable->rowCount()-1,1)->setText(str);
+                   ui->inftable->resizeRowToContents(ui->inftable->rowCount()-1);
+                   //ui->inftable->item(ui->inftable->rowCount()-1,1)->setBackground(Qt::red); цвет
+
+
              }
              if(list.at(i)=="Категория:")
              {
@@ -59,6 +70,7 @@ void managerwindow::updateinf()
                  }
                    ui->inftable->setItem(ui->inftable->rowCount()-1, 2, new QTableWidgetItem());
                    ui->inftable->item(ui->inftable->rowCount()-1,2)->setText(str);
+                   ui->inftable->resizeRowToContents(ui->inftable->rowCount()-1);
              }
              if(list.at(i)=="Масса:")
              {
@@ -68,12 +80,14 @@ void managerwindow::updateinf()
                  }
                    ui->inftable->setItem(ui->inftable->rowCount()-1, 3, new QTableWidgetItem());
                    ui->inftable->item(ui->inftable->rowCount()-1,3)->setText(str);
+                   ui->inftable->resizeRowToContents(ui->inftable->rowCount()-1);
              }
              if(list.at(i)=="Пошлина:")
              {
                    str+=list.at(list.length()-2);
                    ui->inftable->setItem(ui->inftable->rowCount()-1,4, new QTableWidgetItem());
                    ui->inftable->item(ui->inftable->rowCount()-1,4)->setText(str);
+                   ui->inftable->resizeRowToContents(ui->inftable->rowCount()-1);
              }
          }
      }
@@ -85,4 +99,14 @@ void managerwindow::on_backButton_clicked()
 {
     this->close();
     window();
+}
+
+void managerwindow::on_updateButton_clicked()
+{
+ updateinf(path);
+}
+
+void managerwindow::on_pathButton_clicked()
+{
+    path = QFileDialog::getOpenFileName(0, "Open Dialog", "", "*.txt");
 }

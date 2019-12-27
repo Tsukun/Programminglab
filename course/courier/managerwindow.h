@@ -5,6 +5,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QDebug>
+#include <QFileDialog>
 namespace Ui {
 class managerwindow;
 }
@@ -17,12 +18,17 @@ signals:
 public:
     explicit managerwindow(QWidget *parent = nullptr);
     ~managerwindow();
-    void updateinf();
+    void updateinf(QString path);
 private slots:
     void on_backButton_clicked();
 
+    void on_updateButton_clicked();
+
+    void on_pathButton_clicked();
+
 private:
     Ui::managerwindow *ui;
+    QString path;
 };
 
 #endif // MANAGERWINDOW_H

@@ -2,12 +2,14 @@
 #define EMPLOYEE_H
 #include <QString>
 #include <QStringList>
-
+#include <QFile>
+#include <QTextStream>
 class employee
 {
 public:
     employee();
     virtual void work(QString str)=0;
+    virtual void writeinfile(QFile file,QString str)=0;
 private:
 };
 
