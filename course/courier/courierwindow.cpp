@@ -117,8 +117,6 @@ void courierwindow::on_pathButton_clicked()
 
 void courierwindow::on_confButton_clicked()
 {
-    //bool k;
-    //k=ui->inftable->takeItem(0,0)->checkState();
     cour=new courier();
     QStringList list;
     QStringList infile;
