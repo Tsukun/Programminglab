@@ -6,6 +6,8 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QFileDialog>
+#include <employee.h>
+#include <courier.h>
 namespace Ui {
 class courierwindow;
 }
@@ -32,6 +34,7 @@ private slots:
 private:
     Ui::courierwindow *ui;
     QString path;
+    employee* cour;
 };
 
 #endif // COURIERWINDOW_H

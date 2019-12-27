@@ -119,43 +119,32 @@ void courierwindow::on_confButton_clicked()
 {
     //bool k;
     //k=ui->inftable->takeItem(0,0)->checkState();
-    QFile file1("D:\\githubpr\\Programminglab\\course\\courier\\doneapplic.txt");
-    QFile file2("D:\\githubpr\\Programminglab\\course\\courier\\notdoneapplic.txt");
-    QTextStream stream1(&file1);
-    QTextStream stream2(&file2);
+    cour=new courier();
     QStringList list;
+    QStringList infile;
     list<<"ФИО: "<<"Адрес: "<<"Категория: "<<"Масса: "<<"Пошлина: ";
-    if(!file1.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
-        {
-            qDebug()<<"Error1";
-        }
-    if(!file2.open(QIODevice::WriteOnly | QIODevice::Text))
-        {
-            qDebug()<<"Error2";
-        }
     for(int i=0;i<ui->inftable->rowCount();i++)
     {
+        infile.clear();
         if(ui->inftable->item(i,0)->checkState()==0)
         {
          for(int j=1;j<ui->inftable->columnCount();j++)
+         {
           ui->inftable->item(i,j)->setBackground(Qt::red);
-
-         stream2<<list.at(0)<<ui->inftable->item(i,1)->text()
-               <<list.at(1)<<ui->inftable->item(i,2)->text()
-              <<list.at(2)<<ui->inftable->item(i,3)->text()
-             <<list.at(3)<<ui->inftable->item(i,4)->text()
-            <<list.at(4)<<ui->inftable->item(i,5)->text()<<'\n';
-
+          infile+=list.at(j-1)+ui->inftable->item(i,j)->text();
+          cour->writeinfile("D:\\githubpr\\Programminglab\\course\\courier\\notdoneapplic.txt",infile.at(j-1));
+         }
+         cour->writeinfile("D:\\githubpr\\Programminglab\\course\\courier\\notdoneapplic.txt","\n");
         }
         else
         {
             for(int j=1;j<ui->inftable->columnCount();j++)
+            {
             ui->inftable->item(i,j)->setBackground(Qt::green);
-           stream1<<list.at(0)<<ui->inftable->item(i,1)->text()
-                 <<list.at(1)<<ui->inftable->item(i,2)->text()
-                <<list.at(2)<<ui->inftable->item(i,3)->text()
-               <<list.at(3)<<ui->inftable->item(i,4)->text()
-              <<list.at(4)<<ui->inftable->item(i,5)->text()<<'\n';
+            infile+=list.at(j-1)+ui->inftable->item(i,j)->text();
+            cour->writeinfile("D:\\githubpr\\Programminglab\\course\\courier\\doneapplic.txt",infile.at(j-1));
+           }
+           cour->writeinfile("D:\\githubpr\\Programminglab\\course\\courier\\doneapplic.txt","\n");
         }
     }
 }

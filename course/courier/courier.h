@@ -1,7 +1,7 @@
 #ifndef COURIER_H
 #define COURIER_H
 #include "employee.h"
-
+#include <QDebug>
 class courier:public employee
 {
 public:
