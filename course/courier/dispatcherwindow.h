@@ -25,7 +25,7 @@ void on_checkoutButton_clicked();
 
 private:
     Ui::dispatcherwindow *ui;
-    dispatcher* disp;
+    employee* disp;
 };
 
 #endif // DISPATCHERWINDOW_H

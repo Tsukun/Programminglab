@@ -9,7 +9,7 @@ class employee
 public:
     employee();
     virtual void work(QString str)=0;
-    virtual void writeinfile(QFile file,QString str)=0;
+    virtual void writeinfile(QString path,QString str)=0;
 private:
 };
 

@@ -33,7 +33,6 @@ HEADERS += \
     dispatcherwindow.h \
     employee.h \
     mainwindow.h \
-    manager.h \
     managerwindow.h
 
 FORMS += \

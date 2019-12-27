@@ -58,8 +58,6 @@ void managerwindow::updateinf(QString path)
                    ui->inftable->setItem(ui->inftable->rowCount()-1, 1, new QTableWidgetItem());
                    ui->inftable->item(ui->inftable->rowCount()-1,1)->setText(str);
                    ui->inftable->resizeRowToContents(ui->inftable->rowCount()-1);
-                   //ui->inftable->item(ui->inftable->rowCount()-1,1)->setBackground(Qt::red); цвет
-
 
              }
              if(list.at(i)=="Категория:")
