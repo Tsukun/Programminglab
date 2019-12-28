@@ -1,0 +1,13 @@
+debug/courier.o
+debug/courierwindow.o
+debug/dispatcher.o
+debug/dispatcherwindow.o
+debug/employee.o
+debug/main.o
+debug/mainwindow.o
+debug/manager.o
+debug/managerwindow.o
+debug/moc_courierwindow.o
+debug/moc_dispatcherwindow.o
+debug/moc_mainwindow.o
+debug/moc_managerwindow.o

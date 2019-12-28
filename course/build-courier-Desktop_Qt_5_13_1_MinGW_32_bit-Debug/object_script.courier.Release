@@ -1,0 +1,13 @@
+release/courier.o
+release/courierwindow.o
+release/dispatcher.o
+release/dispatcherwindow.o
+release/employee.o
+release/main.o
+release/mainwindow.o
+release/manager.o
+release/managerwindow.o
+release/moc_courierwindow.o
+release/moc_dispatcherwindow.o
+release/moc_mainwindow.o
+release/moc_managerwindow.o
