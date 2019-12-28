@@ -131,6 +131,7 @@ void applicwindow::updateInf(QString str)
                  if(ui->applictable->item(i,k)->text()=="1 ")
                      mech->calcPrice(price*(rand()%random));
              }
+             int p=mech->getPrice();
              ui->applictable->setItem(i, 8, new QTableWidgetItem());
              ui->applictable->item(i,8)->setText(QString::number(mech->getPrice()));
              ui->applictable->resizeRowToContents(i);

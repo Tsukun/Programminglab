@@ -2,7 +2,7 @@
 
 mechanic::mechanic()
 {
-finalprice=0;
+this->finalprice=0;
 }
 void mechanic::workFile(QString path, QStringList str)
 {
