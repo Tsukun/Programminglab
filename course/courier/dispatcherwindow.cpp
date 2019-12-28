@@ -6,6 +6,7 @@ dispatcherwindow::dispatcherwindow(QWidget *parent) :
     ui(new Ui::dispatcherwindow)
 {
     ui->setupUi(this);
+     setWindowTitle("Диспетчер");
 }
 
 dispatcherwindow::~dispatcherwindow()

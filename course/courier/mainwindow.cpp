@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
      connect(dispwindow, &dispatcherwindow::window, this, &MainWindow::show);
      connect(courwindow, &courierwindow::window, this, &MainWindow::show);
      connect(manwindow, &managerwindow::window, this, &MainWindow::show);
+    setWindowTitle("Служба доставки");
 }
 
 MainWindow::~MainWindow()

@@ -11,6 +11,7 @@ courierwindow::courierwindow(QWidget *parent) :
     ui->inftable->setColumnCount(6);
     ui->inftable->horizontalHeader()->setVisible(1);
     ui->inftable->setHorizontalHeaderLabels(head);
+     setWindowTitle("Курьер");
 
 }
 
@@ -128,7 +129,7 @@ void courierwindow::on_confButton_clicked()
         {
          for(int j=1;j<ui->inftable->columnCount();j++)
          {
-          ui->inftable->item(i,j)->setBackground(Qt::red);
+          ui->inftable->item(i,j-1)->setBackground(Qt::red);
           infile+=list.at(j-1)+ui->inftable->item(i,j)->text();
           cour->writeinfile("D:\\githubpr\\Programminglab\\course\\courier\\notdoneapplic.txt",infile.at(j-1));
          }
@@ -145,6 +146,13 @@ void courierwindow::on_confButton_clicked()
            cour->writeinfile("D:\\githubpr\\Programminglab\\course\\courier\\doneapplic.txt","\n");
         }
     }
+    QFile file("D:\\githubpr\\Programminglab\\course\\courier\\fileout.txt");
+    if(!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        {
+            qDebug()<<"Error";
+        }
+     QTextStream stream(&file);
+     stream<<"";
 }
 
 

@@ -11,7 +11,7 @@ managerwindow::managerwindow(QWidget *parent) :
     ui->inftable->setColumnCount(5);
     ui->inftable->horizontalHeader()->setVisible(1);
     ui->inftable->setHorizontalHeaderLabels(head);
-    //updateinf();
+     setWindowTitle("Заявки");
 }
 
 managerwindow::~managerwindow()
