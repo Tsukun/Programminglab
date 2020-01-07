@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>534</width>
-    <height>270</height>
+    <width>555</width>
+    <height>299</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -113,7 +113,7 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>240</y>
+     <y>270</y>
      <width>80</width>
      <height>22</height>
     </rect>
@@ -126,7 +126,7 @@
    <property name="geometry">
     <rect>
      <x>100</x>
-     <y>240</y>
+     <y>270</y>
      <width>80</width>
      <height>22</height>
     </rect>
@@ -250,6 +250,32 @@
    </property>
    <property name="text">
     <string>Замена дисков</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>260</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Время выполнения</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="timeEdit">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>260</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>01.01.2020 12:30</string>
    </property>
   </widget>
  </widget>

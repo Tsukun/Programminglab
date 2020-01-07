@@ -8,9 +8,10 @@ applicwindow::applicwindow(QWidget *parent) :
     ui->setupUi(this);
     QStringList head;
     head<<"ФИО Мастера"<<"ФИО"<<"Телефон"<<"Машина"<<"Кузовные работы"<<"Покраска"
-       <<"Техническая мойка"<<"Балансировка колёс"<<"Замена шин"<<"Системы безопасности"<<"Замена дисков"<<"Цена";
+       <<"Техническая мойка"<<"Балансировка колёс"<<"Замена шин"
+      <<"Системы безопасности"<<"Замена дисков"<<"Время возврата"<<"Цена";
 
-    ui->applictable->setColumnCount(12);
+    ui->applictable->setColumnCount(13);
     ui->applictable->horizontalHeader()->setVisible(1);
     ui->applictable->setHorizontalHeaderLabels(head);
 }
@@ -145,12 +146,22 @@ void applicwindow::updateInf(QString str)
              }
              if(list.at(i)=="дисков:")
              {
-                for(int j=i+1;list.at(j)!="";j++)
+                for(int j=i+1;list.at(j)!="Время:";j++)
                 {
                 str+=list.at(j)+" ";
                 }
                   ui->applictable->setItem(ui->applictable->rowCount()-1, 10, new QTableWidgetItem());
                   ui->applictable->item(ui->applictable->rowCount()-1,10)->setText(str);
+                  ui->applictable->resizeRowToContents(ui->applictable->rowCount()-1);
+             }
+             if(list.at(i)=="Время:")
+             {
+                for(int j=i+1;list.at(j)!="";j++)
+                {
+                str+=list.at(j)+" ";
+                }
+                  ui->applictable->setItem(ui->applictable->rowCount()-1, 11, new QTableWidgetItem());
+                  ui->applictable->item(ui->applictable->rowCount()-1,11)->setText(str);
                   ui->applictable->resizeRowToContents(ui->applictable->rowCount()-1);
              }
              }
@@ -165,10 +176,11 @@ void applicwindow::updateInf(QString str)
                  if(ui->applictable->item(i,k)->text()=="1 ")
                      mech->calcPrice(price*(rand()%random));
              }
-             ui->applictable->setItem(i, 11, new QTableWidgetItem());
-             ui->applictable->item(i,11)->setText(QString::number(mech->getPrice()));
+             ui->applictable->setItem(i, 12, new QTableWidgetItem());
+             ui->applictable->item(i,12)->setText(QString::number(mech->getPrice()));
              ui->applictable->resizeRowToContents(i);
          }
+
   }
 
 
