@@ -24,6 +24,7 @@ void diagnosticwindow::on_addButton_clicked()
     QStringList list;
     QString str;
     pers=new mechanic();
+    str+="ФИО Мастера: "+ui->fmasternameEdit->text()+" ";
     str+="ФИО: "+ui->fnameEdit->text()+" ";
     str+="Телефон: "+ui->telnumberEdit->text()+" ";
     str+="Машина: "+ui->carEdit->text();
@@ -47,6 +48,14 @@ void diagnosticwindow::on_addButton_clicked()
     str+=" Замена шин: 1";
     else
     str+=" Замена шин: 0";
+    if(ui->defsysButton->isChecked())
+    str+=" Установка систем безопасности: 1";
+    else
+    str+=" Установка систем безопасности: 0";
+    if(ui->replacediskButton->isChecked())
+    str+=" Замена дисков: 1";
+    else
+    str+=" Замена дисков: 0";
     list=str.split(" ");
     pers->workFile("D:\\githubpr\\Programminglab\\course\\autorepairshop\\diagnostic.txt",list);
 }

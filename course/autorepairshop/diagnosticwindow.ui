@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>210</x>
-     <y>20</y>
+     <y>10</y>
      <width>131</width>
      <height>21</height>
     </rect>
@@ -139,7 +139,7 @@
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>70</y>
+     <y>40</y>
      <width>111</width>
      <height>20</height>
     </rect>
@@ -152,7 +152,7 @@
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>100</y>
+     <y>70</y>
      <width>72</width>
      <height>20</height>
     </rect>
@@ -165,7 +165,7 @@
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>130</y>
+     <y>100</y>
      <width>121</width>
      <height>20</height>
     </rect>
@@ -178,7 +178,7 @@
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>160</y>
+     <y>130</y>
      <width>131</width>
      <height>20</height>
     </rect>
@@ -191,13 +191,65 @@
    <property name="geometry">
     <rect>
      <x>340</x>
-     <y>190</y>
+     <y>160</y>
      <width>91</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
     <string>Замена шин</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>40</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ФИО Мастера</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="fmasternameEdit">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>40</y>
+     <width>151</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Иванов Иван Иванович</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="defsysButton">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>190</y>
+     <width>181</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Установка систем безопасности</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="replacediskButton">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>220</y>
+     <width>101</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Замена дисков</string>
    </property>
   </widget>
  </widget>

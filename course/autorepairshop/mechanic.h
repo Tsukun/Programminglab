@@ -5,7 +5,7 @@
 class mechanic:public personal
 {
 public:
-    mechanic();
+mechanic();
 void workFile(QString path, QStringList str) override;
 void calcPrice(double price);
 double getPrice();
